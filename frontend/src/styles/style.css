@@ -1,0 +1,1055 @@
+.promo-app-interface {
+  background-color: #ffffff;
+  width: 100%;
+  min-width: 1903px;
+  min-height: 1011px;
+  display: flex;
+  flex-direction: column;
+}
+
+.promo-app-interface .home {
+  margin-left: 231.5px;
+  width: 1440px;
+  height: 201px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #0000001a;
+}
+
+.promo-app-interface .container {
+  display: flex;
+  width: 1440px;
+  height: 96px;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px 16px 0px;
+}
+
+.promo-app-interface .heading {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 36px;
+}
+
+.promo-app-interface .text-wrapper {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #155dfc;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 36px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .div {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 24px;
+}
+
+.promo-app-interface .text-wrapper-2 {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #4a5565;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .container-2 {
+  margin-left: 16px;
+  width: 1408px;
+  height: 36px;
+  position: relative;
+}
+
+.promo-app-interface .input {
+  display: flex;
+  width: 1408px;
+  height: 36px;
+  align-items: center;
+  padding: 4px 48px 4px 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f3f3f5;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: transparent;
+}
+
+.promo-app-interface .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #717182;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.promo-app-interface .icon {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 20px;
+  height: 20px;
+}
+
+.promo-app-interface .vector {
+  position: absolute;
+  width: 91.67%;
+  height: 91.67%;
+  top: 8.33%;
+  left: 8.33%;
+}
+
+.promo-app-interface .img {
+  position: absolute;
+  width: 34.58%;
+  height: 34.58%;
+  top: 65.42%;
+  left: 65.42%;
+}
+
+.promo-app-interface .button {
+  position: absolute;
+  top: 2px;
+  left: 1368px;
+  width: 36px;
+  height: 32px;
+}
+
+.promo-app-interface .container-3 {
+  display: flex;
+  width: 1440px;
+  height: 52px;
+  position: relative;
+  margin-top: 16px;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0px 0px 0px 16px;
+}
+
+.promo-app-interface .primitive-button {
+  display: flex;
+  width: 140px;
+  height: 36px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 12px;
+  position: relative;
+  background-color: #f3f3f5;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: transparent;
+}
+
+.promo-app-interface .primitive-span {
+  display: flex;
+  width: 77.44px;
+  height: 20px;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-app-interface .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #0a0a0a;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .vector-wrapper {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  opacity: 0.5;
+}
+
+.promo-app-interface .vector-2 {
+  position: absolute;
+  width: 79.17%;
+  height: 66.67%;
+  top: 33.33%;
+  left: 20.83%;
+}
+
+.promo-app-interface .div-wrapper {
+  display: flex;
+  width: 77.97px;
+  height: 20px;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-app-interface .home-2 {
+  display: grid;
+  margin-left: 247.5px;
+  width: 1408px;
+  height: 698px;
+  position: relative;
+  margin-top: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  background-color: #f9fafb;
+}
+
+.promo-app-interface .product-card {
+  position: relative;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #e5e7eb;
+}
+
+.promo-app-interface .container-4 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 192px;
+  background-image: url(./img/image-with-fallback-3.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.promo-app-interface .badge {
+  display: flex;
+  width: 46px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 8px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #ff6900;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: transparent;
+}
+
+.promo-app-interface .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  margin-left: -0.25px;
+  margin-right: -0.25px;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .icon-wrapper {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px;
+  position: absolute;
+  top: 12px;
+  left: 290px;
+  background-color: #ffffffe6;
+  border-radius: 8px;
+}
+
+.promo-app-interface .img-wrapper {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.promo-app-interface .vector-3 {
+  position: absolute;
+  width: 95.83%;
+  height: 91.67%;
+  top: 8.33%;
+  left: 4.17%;
+}
+
+.promo-app-interface .container-5 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 147px;
+}
+
+.promo-app-interface .paragraph {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 306px;
+  height: 24px;
+  display: flex;
+}
+
+.promo-app-interface .text-wrapper-6 {
+  margin-top: -2px;
+  width: 70px;
+  height: 24px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #6a7282;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .heading-2 {
+  position: absolute;
+  top: 44px;
+  left: 16px;
+  width: 306px;
+  height: 27px;
+  display: flex;
+}
+
+.promo-app-interface .text-wrapper-7 {
+  margin-top: -1px;
+  width: 226px;
+  height: 27px;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #0a0a0a;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 27px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .container-6 {
+  display: flex;
+  width: 306px;
+  height: 24px;
+  align-items: flex-start;
+  gap: 8px;
+  position: absolute;
+  top: 79px;
+  left: 16px;
+}
+
+.promo-app-interface .text {
+  position: relative;
+  width: 51.91px;
+  height: 24px;
+}
+
+.promo-app-interface .text-wrapper-8 {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #155dfc;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .text-wrapper-9 {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #99a1af;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  text-decoration: line-through;
+  white-space: nowrap;
+}
+
+.promo-app-interface .paragraph-2 {
+  position: absolute;
+  top: 107px;
+  left: 16px;
+  width: 306px;
+  height: 24px;
+  display: flex;
+}
+
+.promo-app-interface .text-wrapper-10 {
+  margin-top: -2px;
+  width: 104px;
+  height: 24px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #6a7282;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .product-card-2 {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #e5e7eb;
+}
+
+.promo-app-interface .container-7 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 192px;
+  background-image: url(./img/image-with-fallback.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.promo-app-interface .text-wrapper-11 {
+  position: relative;
+  width: fit-content;
+  margin-left: -0.48px;
+  margin-right: -0.48px;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .levi-s {
+  margin-top: -2px;
+  width: 43px;
+  height: 24px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #6a7282;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .levi-s-jeans {
+  margin-top: -1px;
+  width: 141px;
+  height: 27px;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #0a0a0a;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 27px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .text-wrapper-12 {
+  width: 107px;
+  margin-top: -2px;
+  height: 24px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #6a7282;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .product-card-3 {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #e5e7eb;
+}
+
+.promo-app-interface .container-8 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 192px;
+  background-image: url(./img/image-with-fallback-4.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.promo-app-interface .text-wrapper-13 {
+  position: relative;
+  width: fit-content;
+  margin-left: -0.38px;
+  margin-right: -0.38px;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .text-wrapper-14 {
+  margin-top: -2px;
+  width: 34px;
+  height: 24px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #6a7282;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .text-wrapper-15 {
+  margin-top: -1px;
+  width: 146px;
+  height: 27px;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #0a0a0a;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 27px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .product-card-4 {
+  grid-row: 1 / 2;
+  grid-column: 4 / 5;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #e5e7eb;
+}
+
+.promo-app-interface .container-9 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 192px;
+}
+
+.promo-app-interface .image-with-fallback {
+  display: flex;
+  width: 338px;
+  height: 192px;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 125px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f3f4f6;
+}
+
+.promo-app-interface .image-error-loading {
+  position: relative;
+  width: 88px;
+  height: 88px;
+}
+
+.promo-app-interface .vector-4 {
+  position: absolute;
+  width: 83.92%;
+  height: 83.92%;
+  top: 16.08%;
+  left: 16.08%;
+}
+
+.promo-app-interface .vector-5 {
+  position: absolute;
+  width: 83.39%;
+  height: 56.65%;
+  top: 43.35%;
+  left: 16.61%;
+}
+
+.promo-app-interface .vector-6 {
+  position: absolute;
+  width: 49.83%;
+  height: 70.28%;
+  top: 29.72%;
+  left: 50.17%;
+}
+
+.promo-app-interface .text-wrapper-16 {
+  margin-top: -2px;
+  width: 44px;
+  height: 24px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #6a7282;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .text-wrapper-17 {
+  margin-top: -1px;
+  width: 182px;
+  height: 27px;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #0a0a0a;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 27px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .text-2 {
+  position: relative;
+  width: 60.53px;
+  height: 24px;
+}
+
+.promo-app-interface .product-card-5 {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #e5e7eb;
+}
+
+.promo-app-interface .container-10 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 192px;
+  background-image: url(./img/image.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.promo-app-interface .text-wrapper-18 {
+  margin-top: -1px;
+  width: 184px;
+  height: 27px;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #0a0a0a;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 27px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .product-card-6 {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #e5e7eb;
+}
+
+.promo-app-interface .container-11 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 192px;
+  background-image: url(./img/image-with-fallback-2.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.promo-app-interface .text-wrapper-19 {
+  position: relative;
+  width: fit-content;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .text-wrapper-20 {
+  margin-top: -2px;
+  width: 38px;
+  height: 24px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #6a7282;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .text-wrapper-21 {
+  margin-top: -1px;
+  width: 114px;
+  height: 27px;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #0a0a0a;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 27px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .text-wrapper-22 {
+  width: 106px;
+  margin-top: -2px;
+  height: 24px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #6a7282;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .bottom-nav {
+  display: flex;
+  width: 1903px;
+  height: 77px;
+  position: relative;
+  margin-top: 1px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1px 231.5px 0px;
+  background-color: #ffffff;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-color: #0000001a;
+}
+
+.promo-app-interface .container-12 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+  height: 76px;
+  gap: 4px;
+}
+
+.promo-app-interface .button-2 {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-app-interface .text-3 {
+  position: absolute;
+  top: 40px;
+  left: 148px;
+  width: 61px;
+  height: 24px;
+  display: flex;
+}
+
+.promo-app-interface .text-wrapper-23 {
+  margin-top: -2px;
+  width: 64px;
+  height: 24px;
+  margin-left: -2px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #155dfc;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .container-13 {
+  display: flex;
+  flex-direction: column;
+  width: 24px;
+  height: 24px;
+  align-items: flex-start;
+  position: absolute;
+  top: 12px;
+  left: 166px;
+}
+
+.promo-app-interface .vector-7 {
+  position: absolute;
+  width: 66.67%;
+  height: 54.17%;
+  top: 45.83%;
+  left: 33.33%;
+}
+
+.promo-app-interface .vector-8 {
+  position: absolute;
+  width: 91.67%;
+  height: 95.83%;
+  top: 4.17%;
+  left: 8.33%;
+}
+
+.promo-app-interface .button-3 {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-app-interface .text-4 {
+  position: absolute;
+  top: 40px;
+  left: 152px;
+  width: 53px;
+  height: 24px;
+  display: flex;
+}
+
+.promo-app-interface .text-wrapper-24 {
+  margin-top: -2px;
+  width: 58px;
+  height: 24px;
+  margin-left: -2px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #4a5565;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .button-4 {
+  position: relative;
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-app-interface .text-5 {
+  position: absolute;
+  top: 40px;
+  left: 134px;
+  width: 89px;
+  height: 24px;
+  display: flex;
+}
+
+.promo-app-interface .text-wrapper-25 {
+  margin-top: -2px;
+  width: 94px;
+  height: 24px;
+  margin-left: -3px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #4a5565;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .container-14 {
+  position: absolute;
+  top: 12px;
+  left: 166px;
+  width: 24px;
+  height: 24px;
+}
+
+.promo-app-interface .icon-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.promo-app-interface .vector-9 {
+  position: absolute;
+  width: 61.38%;
+  height: 16.67%;
+  top: 83.33%;
+  left: 38.62%;
+}
+
+.promo-app-interface .vector-10 {
+  position: absolute;
+  width: 91.66%;
+  height: 95.83%;
+  top: 4.17%;
+  left: 8.34%;
+}
+
+.promo-app-interface .badge-2 {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0px 4px;
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background-color: #ff6900;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: transparent;
+}
+
+.promo-app-interface .text-wrapper-26 {
+  position: relative;
+  width: fit-content;
+  font-family: 'Inter-Medium', Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .button-5 {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
+  grid-row: 1 / 2;
+  grid-column: 4 / 5;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-app-interface .text-6 {
+  position: absolute;
+  top: 40px;
+  left: 148px;
+  width: 62px;
+  height: 24px;
+  display: flex;
+}
+
+.promo-app-interface .text-wrapper-27 {
+  margin-top: -2px;
+  width: 64px;
+  height: 24px;
+  margin-left: -1px;
+  font-family: 'Inter-Regular', Helvetica;
+  font-weight: 400;
+  color: #4a5565;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.promo-app-interface .vector-11 {
+  position: absolute;
+  width: 83.33%;
+  height: 41.67%;
+  top: 58.33%;
+  left: 16.67%;
+}
+
+.promo-app-interface .vector-12 {
+  position: absolute;
+  width: 70.83%;
+  height: 91.67%;
+  top: 8.33%;
+  left: 29.17%;
+}
