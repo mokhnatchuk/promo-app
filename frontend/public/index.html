@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROMO / SaleRadar - Відстеження акцій і знижок</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    .hidden-screen {
+      display: none !important;
+    }
+    
+    .active-screen {
+      display: block !important;
+    }
+    
+    h1 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      line-height: 2.25rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 2rem;
+    }
+    
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.75rem;
+    }
+    
+    .bottom-nav-item {
+      transition: color 0.2s;
+    }
+    
+    .bottom-nav-item.active {
+      color: #1E88E5;
+    }
+    
+    .product-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-primary {
+      background-color: #1E88E5;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+    
+    .btn-outline {
+      background-color: white;
+      color: #374151;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      border: 1px solid #D1D5DB;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s;
+    }
+    
+    .btn-outline:hover {
+      background-color: #F9FAFB;
+    }
+    
+    .input-field {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #D1D5DB;
+      border-radius: 0.5rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    
+    .input-field:focus {
+      border-color: #1E88E5;
+      box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
+    }
+    
+    .select-field {
+      width: 140px;
+      padding: 0.5rem;
+      border: 1px solid #D1D5DB;
+      border-radius: 0.5rem;
+      outline: none;
+      background-color: white;
+      cursor: pointer;
+    }
+    
+    .badge-discount {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      background-color: #FF7043;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+    
+    .notification-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background-color: #FF7043;
+      color: white;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen" class="active-screen min-h-screen flex flex-col md:flex-row">
+    <!-- Left side - Form -->
+    <div class="flex-1 flex items-center justify-center p-8 bg-white">
+      <div class="w-full max-w-md">
+        <!-- Logo -->
+        <div class="text-center mb-8">
+          <div class="flex items-center justify-center gap-2 mb-2">
+            <i data-lucide="shopping-bag" class="w-10 h-10 text-blue-600"></i>
+            <div>
+              <h1 class="text-blue-600">PROMO</h1>
+              <p class="text-orange-500 -mt-2 text-xl font-semibold">SaleRadar</p>
+            </div>
+          </div>
+          <p class="text-gray-600 mt-4" id="login-subtitle">
+            Відстежуйте кращі знижки
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form id="login-form" class="space-y-4">
+          <div>
+            <label for="email" class="block text-gray-700 mb-2 font-medium">Email</label>
+            <div class="relative">
+              <i data-lucide="mail" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+              <input
+                id="email"
+                type="email"
+                placeholder="your@email.com"
+                class="input-field pl-10"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="password" class="block text-gray-700 mb-2 font-medium">Пароль</label>
+            <div class="relative">
+              <i data-lucide="lock" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+              <input
+                id="password"
+                type="password"
+                placeholder="••••••••"
+                class="input-field pl-10"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="text-right" id="forgot-password">
+            <a href="#" class="text-blue-600 hover:underline text-sm">
+              Забули пароль?
+            </a>
+          </div>
+
+          <button type="submit" class="btn-primary" id="login-submit-btn">
+            Увійти
+          </button>
+
+          <div class="relative my-6">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center">
+              <span class="px-4 bg-white text-gray-500 text-sm">або</span>
+            </div>
+          </div>
+
+          <button type="button" class="btn-outline flex items-center justify-center gap-2" id="google-login-btn">
+            <svg class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            Увійти через Google
+          </button>
+
+          <div class="text-center mt-6">
+            <button
+              type="button"
+              id="toggle-register-btn"
+              class="text-blue-600 hover:underline text-sm"
+            >
+              Немає акаунту? Реєстрація
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Right side - Illustration -->
+    <div class="hidden md:flex flex-1 bg-gradient-to-br from-blue-600 to-blue-800 items-center justify-center p-12">
+      <div class="text-white text-center max-w-md">
+        <img
+          src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=600&h=600&fit=crop"
+          alt="Shopping illustration"
+          class="w-full h-auto rounded-lg shadow-2xl mb-8"
+        />
+        <h2 class="mb-4 text-white">Знаходьте найкращі знижки</h2>
+        <p class="text-blue-100 text-lg">
+          Відстежуйте ціни на улюблені товари та отримуйте сповіщення про акції
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOME SCREEN -->
+  <div id="home-screen" class="hidden-screen pb-20">
+    <!-- Header -->
+    <div class="bg-white border-b sticky top-0 z-10">
+      <div class="p-4">
+        <h1 class="text-blue-600 mb-1">Топ знижки сьогодні</h1>
+        <p class="text-gray-600" id="products-count">Знайдено 6 товарів</p>
+      </div>
+
+      <!-- Search -->
+      <div class="px-4 pb-4">
+        <div class="relative">
+          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Пошук товарів, брендів, категорій"
+            class="input-field pl-10 pr-12"
+          />
+          <button class="absolute right-1 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-100 rounded">
+            <i data-lucide="sliders-horizontal" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="px-4 pb-4 flex gap-3 overflow-x-auto">
+        <select id="category-filter" class="select-field">
+          <option value="all">Всі категорії</option>
+          <option value="Електроніка">Електроніка</option>
+          <option value="Одяг">Одяг</option>
+          <option value="Взуття">Взуття</option>
+        </select>
+
+        <select id="sort-filter" class="select-field">
+          <option value="discount">За знижкою</option>
+          <option value="price-low">Ціна: низька</option>
+          <option value="price-high">Ціна: висока</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="p-4">
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <!-- Products will be rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL SCREEN -->
+  <div id="product-detail-screen" class="hidden-screen pb-20">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="bg-white border-b p-4 flex items-center gap-4 sticky top-0 z-10">
+        <button id="back-from-product" class="p-2 hover:bg-gray-100 rounded-lg">
+          <i data-lucide="arrow-left" class="w-6 h-6"></i>
+        </button>
+        <h2 class="flex-1">Деталі товару</h2>
+        <button id="watchlist-toggle-detail" class="p-2 hover:bg-gray-100 rounded-lg">
+          <i data-lucide="heart" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <div class="p-4">
+        <!-- Product Image -->
+        <div class="bg-white rounded-lg overflow-hidden mb-4">
+          <img id="product-detail-image" src="" alt="" class="w-full h-80 object-cover">
+        </div>
+
+        <!-- Product Info -->
+        <div class="bg-white rounded-lg p-6 mb-4">
+          <span id="product-detail-brand" class="text-gray-500 text-sm"></span>
+          <h2 id="product-detail-name" class="mb-2"></h2>
+          
+          <div class="flex items-baseline gap-3 mb-4">
+            <span id="product-detail-price" class="text-3xl font-bold text-blue-600"></span>
+            <span id="product-detail-old-price" class="text-xl text-gray-400 line-through"></span>
+            <span id="product-detail-discount" class="bg-orange-500 text-white px-2 py-1 rounded text-sm font-semibold"></span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm text-gray-600 mb-4">
+            <i data-lucide="clock" class="w-4 h-4"></i>
+            <span>Діє до: <span id="product-detail-valid"></span></span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm text-gray-600">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+            <span id="product-detail-category"></span>
+          </div>
+        </div>
+
+        <!-- Price History Chart -->
+        <div class="bg-white rounded-lg p-6 mb-4">
+          <h3 class="mb-4">Історія цін</h3>
+          <div id="price-chart" class="h-48 flex items-end gap-2">
+            <!-- Simple bar chart will be rendered here -->
+          </div>
+        </div>
+
+        <!-- Stores Comparison -->
+        <div class="bg-white rounded-lg p-6">
+          <h3 class="mb-4">Порівняння цін в магазинах</h3>
+          <div id="stores-list" class="space-y-3">
+            <!-- Stores will be rendered here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATCHLIST SCREEN -->
+  <div id="watchlist-screen" class="hidden-screen pb-20">
+    <!-- Header -->
+    <div class="bg-white border-b p-4 sticky top-0 z-10">
+      <h1 class="text-blue-600">Мій список відстеження</h1>
+      <p class="text-gray-600" id="watchlist-count">0 товарів</p>
+    </div>
+
+    <!-- Watchlist Products -->
+    <div class="p-4">
+      <div id="watchlist-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <!-- Watchlist products will be rendered here -->
+      </div>
+      <div id="watchlist-empty" class="text-center py-16 hidden">
+        <i data-lucide="heart" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
+        <h3 class="text-gray-500 mb-2">Список порожній</h3>
+        <p class="text-gray-400">Додайте товари для відстеження знижок</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICATIONS SCREEN -->
+  <div id="notifications-screen" class="hidden-screen pb-20">
+    <!-- Header -->
+    <div class="bg-white border-b p-4 sticky top-0 z-10 flex items-center justify-between">
+      <div>
+        <h1 class="text-blue-600">Сповіщення</h1>
+        <p class="text-gray-600" id="notifications-count">0 сповіщень</p>
+      </div>
+      <button id="clear-notifications-btn" class="text-sm text-blue-600 hover:underline">
+        Очистити всі
+      </button>
+    </div>
+
+    <!-- Notifications List -->
+    <div class="p-4">
+      <div id="notifications-list" class="space-y-3">
+        <!-- Notifications will be rendered here -->
+      </div>
+      <div id="notifications-empty" class="text-center py-16 hidden">
+        <i data-lucide="bell" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
+        <h3 class="text-gray-500 mb-2">Немає сповіщень</h3>
+        <p class="text-gray-400">Ви отримаєте сповіщення про нові знижки</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE SCREEN -->
+  <div id="profile-screen" class="hidden-screen pb-20">
+    <!-- Header -->
+    <div class="bg-white border-b p-4 sticky top-0 z-10">
+      <h1 class="text-blue-600">Профіль</h1>
+    </div>
+
+    <div class="p-4">
+      <!-- User Info -->
+      <div class="bg-white rounded-lg p-6 mb-4 flex items-center gap-4">
+        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+          U
+        </div>
+        <div>
+          <h3>Користувач</h3>
+          <p class="text-gray-500 text-sm">user@email.com</p>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div class="bg-white rounded-lg divide-y">
+        <button class="w-full p-4 flex items-center gap-3 hover:bg-gray-50 text-left">
+          <i data-lucide="user" class="w-5 h-5 text-gray-600"></i>
+          <span>Редагувати профіль</span>
+        </button>
+        
+        <button class="w-full p-4 flex items-center gap-3 hover:bg-gray-50 text-left">
+          <i data-lucide="bell" class="w-5 h-5 text-gray-600"></i>
+          <span>Налаштування сповіщень</span>
+        </button>
+        
+        <button class="w-full p-4 flex items-center gap-3 hover:bg-gray-50 text-left">
+          <i data-lucide="credit-card" class="w-5 h-5 text-gray-600"></i>
+          <span>Платіжні методи</span>
+        </button>
+        
+        <button class="w-full p-4 flex items-center gap-3 hover:bg-gray-50 text-left">
+          <i data-lucide="shield" class="w-5 h-5 text-gray-600"></i>
+          <span>Конфіденційність</span>
+        </button>
+        
+        <button class="w-full p-4 flex items-center gap-3 hover:bg-gray-50 text-left">
+          <i data-lucide="help-circle" class="w-5 h-5 text-gray-600"></i>
+          <span>Допомога та підтримка</span>
+        </button>
+        
+        <button class="w-full p-4 flex items-center gap-3 hover:bg-gray-50 text-left">
+          <i data-lucide="info" class="w-5 h-5 text-gray-600"></i>
+          <span>Про застосунок</span>
+        </button>
+      </div>
+
+      <!-- Logout Button -->
+      <button id="logout-btn" class="w-full mt-6 p-4 bg-white rounded-lg text-red-600 font-semibold hover:bg-red-50 flex items-center justify-center gap-2">
+        <i data-lucide="log-out" class="w-5 h-5"></i>
+        Вийти
+      </button>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAVIGATION -->
+  <div id="bottom-nav" class="hidden fixed bottom-0 left-0 right-0 bg-white border-t z-20">
+    <div class="max-w-[1440px] mx-auto flex items-center justify-around h-16">
+      <button class="bottom-nav-item flex flex-col items-center gap-1 p-2" data-screen="home">
+        <i data-lucide="home" class="w-6 h-6"></i>
+        <span class="text-xs">Головна</span>
+      </button>
+      
+      <button class="bottom-nav-item flex flex-col items-center gap-1 p-2" data-screen="watchlist">
+        <i data-lucide="heart" class="w-6 h-6"></i>
+        <span class="text-xs">Список</span>
+      </button>
+      
+      <button class="bottom-nav-item flex flex-col items-center gap-1 p-2 relative" data-screen="notifications">
+        <i data-lucide="bell" class="w-6 h-6"></i>
+        <span class="text-xs">Сповіщення</span>
+        <span id="notification-badge" class="notification-badge hidden">0</span>
+      </button>
+      
+      <button class="bottom-nav-item flex flex-col items-center gap-1 p-2" data-screen="profile">
+        <i data-lucide="user" class="w-6 h-6"></i>
+        <span class="text-xs">Профіль</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // App State
+    let appState = {
+      isLoggedIn: false,
+      isRegistering: false,
+      currentScreen: 'login',
+      selectedProduct: null,
+      watchlist: [],
+      notifications: [
+        {
+          id: '1',
+          productId: '1',
+          productName: 'iPhone 14 Pro',
+          productImage: 'https://images.unsplash.com/photo-1678652197950-32c428e880b8?w=300&h=300&fit=crop',
+          message: 'Ціна знизилася на 15%',
+          time: '2 години тому',
+          read: false
+        },
+        {
+          id: '2',
+          productId: '2',
+          productName: 'Nike Air Max',
+          productImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop',
+          message: 'Нова знижка 30%',
+          time: '5 годин тому',
+          read: false
+        }
+      ],
+      searchQuery: '',
+      categoryFilter: 'all',
+      sortBy: 'discount'
+    };
+
+    // Mock Products Data
+    const mockProducts = [
+      {
+        id: '1',
+        name: 'iPhone 14 Pro 256GB',
+        brand: 'Apple',
+        image: 'https://images.unsplash.com/photo-1678652197950-32c428e880b8?w=400&h=400&fit=crop',
+        currentPrice: 32999,
+        oldPrice: 45999,
+        discount: 28,
+        category: 'Електроніка',
+        validUntil: '2025-11-20',
+        priceHistory: [
+          { date: '2025-10-01', price: 45999 },
+          { date: '2025-10-15', price: 42999 },
+          { date: '2025-11-01', price: 38999 },
+          { date: '2025-11-12', price: 32999 }
+        ],
+        stores: [
+          { name: 'Rozetka', price: 32999 },
+          { name: 'Comfy', price: 33999 },
+          { name: 'Citrus', price: 34499 }
+        ]
+      },
+      {
+        id: '2',
+        name: 'Nike Air Max 270',
+        brand: 'Nike',
+        image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop',
+        currentPrice: 2799,
+        oldPrice: 3999,
+        discount: 30,
+        category: 'Взуття',
+        validUntil: '2025-11-18',
+        priceHistory: [
+          { date: '2025-10-01', price: 3999 },
+          { date: '2025-10-20', price: 3499 },
+          { date: '2025-11-10', price: 2799 }
+        ],
+        stores: [
+          { name: 'Nike Store', price: 2799 },
+          { name: 'Sport Life', price: 2899 },
+          { name: 'Intertop', price: 2999 }
+        ]
+      },
+      {
+        id: '3',
+        name: 'Samsung Galaxy Buds Pro',
+        brand: 'Samsung',
+        image: 'https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=400&h=400&fit=crop',
+        currentPrice: 3499,
+        oldPrice: 5999,
+        discount: 42,
+        category: 'Електроніка',
+        validUntil: '2025-11-15',
+        priceHistory: [
+          { date: '2025-09-15', price: 5999 },
+          { date: '2025-10-01', price: 4999 },
+          { date: '2025-11-01', price: 3499 }
+        ],
+        stores: [
+          { name: 'Samsung Store', price: 3499 },
+          { name: 'Rozetka', price: 3599 },
+          { name: 'Allo', price: 3699 }
+        ]
+      },
+      {
+        id: '4',
+        name: 'PlayStation 5',
+        brand: 'Sony',
+        image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=400&h=400&fit=crop',
+        currentPrice: 17999,
+        oldPrice: 22999,
+        discount: 22,
+        category: 'Електроніка',
+        validUntil: '2025-11-25',
+        priceHistory: [
+          { date: '2025-09-01', price: 22999 },
+          { date: '2025-10-01', price: 20999 },
+          { date: '2025-11-05', price: 17999 }
+        ],
+        stores: [
+          { name: 'Rozetka', price: 17999 },
+          { name: 'Allo', price: 18499 },
+          { name: 'Comfy', price: 18999 }
+        ]
+      },
+      {
+        id: '5',
+        name: 'Levi\'s 501 Jeans',
+        brand: 'Levi\'s',
+        image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=400&fit=crop',
+        currentPrice: 1899,
+        oldPrice: 2999,
+        discount: 37,
+        category: 'Одяг',
+        validUntil: '2025-11-22',
+        priceHistory: [
+          { date: '2025-10-01', price: 2999 },
+          { date: '2025-10-20', price: 2499 },
+          { date: '2025-11-10', price: 1899 }
+        ],
+        stores: [
+          { name: 'Levi\'s Store', price: 1899 },
+          { name: 'Answear', price: 1999 },
+          { name: 'Intertop', price: 2099 }
+        ]
+      },
+      {
+        id: '6',
+        name: 'Apple Watch Series 8',
+        brand: 'Apple',
+        image: 'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=400&h=400&fit=crop',
+        currentPrice: 12999,
+        oldPrice: 17999,
+        discount: 28,
+        category: 'Електроніка',
+        validUntil: '2025-11-19',
+        priceHistory: [
+          { date: '2025-09-15', price: 17999 },
+          { date: '2025-10-15', price: 15999 },
+          { date: '2025-11-08', price: 12999 }
+        ],
+        stores: [
+          { name: 'iStore', price: 12999 },
+          { name: 'Rozetka', price: 13499 },
+          { name: 'Citrus', price: 13999 }
+        ]
+      }
+    ];
+
+    // Utility Functions
+    function formatPrice(price) {
+      return price.toLocaleString('uk-UA') + ' ₴';
+    }
+
+    function navigateToScreen(screenName) {
+      // Hide all screens
+      document.querySelectorAll('[id$="-screen"]').forEach(screen => {
+        screen.classList.remove('active-screen');
+        screen.classList.add('hidden-screen');
+      });
+
+      // Show target screen
+      const targetScreen = document.getElementById(`${screenName}-screen`);
+      if (targetScreen) {
+        targetScreen.classList.remove('hidden-screen');
+        targetScreen.classList.add('active-screen');
+      }
+
+      // Update bottom nav active state
+      document.querySelectorAll('.bottom-nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      const activeNavItem = document.querySelector(`[data-screen="${screenName}"]`);
+      if (activeNavItem) {
+        activeNavItem.classList.add('active');
+      }
+
+      appState.currentScreen = screenName;
+
+      // Update icons
+      lucide.createIcons();
+    }
+
+    function getFilteredProducts() {
+      return mockProducts
+        .filter(product => {
+          const matchesSearch = product.name.toLowerCase().includes(appState.searchQuery.toLowerCase()) ||
+                              product.brand.toLowerCase().includes(appState.searchQuery.toLowerCase());
+          const matchesCategory = appState.categoryFilter === 'all' || product.category === appState.categoryFilter;
+          return matchesSearch && matchesCategory;
+        })
+        .sort((a, b) => {
+          if (appState.sortBy === 'discount') return b.discount - a.discount;
+          if (appState.sortBy === 'price-low') return a.currentPrice - b.currentPrice;
+          if (appState.sortBy === 'price-high') return b.currentPrice - a.currentPrice;
+          return 0;
+        });
+    }
+
+    function renderProductCard(product, isInWatchlist) {
+      return `
+        <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer" data-product-id="${product.id}">
+          <div class="relative">
+            <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+            <div class="badge-discount">-${product.discount}%</div>
+            <button class="watchlist-btn absolute top-2 right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-100" data-product-id="${product.id}">
+              <i data-lucide="heart" class="w-5 h-5 ${isInWatchlist ? 'fill-red-500 stroke-red-500' : ''}"></i>
+            </button>
+          </div>
+          <div class="p-4">
+            <span class="text-gray-500 text-sm">${product.brand}</span>
+            <h3 class="text-sm font-semibold mb-2 line-clamp-2">${product.name}</h3>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-xl font-bold text-blue-600">${formatPrice(product.currentPrice)}</span>
+              <span class="text-sm text-gray-400 line-through">${formatPrice(product.oldPrice)}</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-500">
+              <i data-lucide="clock" class="w-3 h-3"></i>
+              <span>до ${product.validUntil}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderProductsGrid() {
+      const grid = document.getElementById('products-grid');
+      const filteredProducts = getFilteredProducts();
+      
+      grid.innerHTML = filteredProducts.map(product => 
+        renderProductCard(product, appState.watchlist.includes(product.id))
+      ).join('');
+
+      document.getElementById('products-count').textContent = `Знайдено ${filteredProducts.length} товарів`;
+
+      // Add click handlers
+      grid.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (!e.target.closest('.watchlist-btn')) {
+            const productId = card.dataset.productId;
+            const product = mockProducts.find(p => p.id === productId);
+            showProductDetail(product);
+          }
+        });
+      });
+
+      // Add watchlist toggle handlers
+      grid.querySelectorAll('.watchlist-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const productId = btn.dataset.productId;
+          toggleWatchlist(productId);
+        });
+      });
+
+      lucide.createIcons();
+    }
+
+    function showProductDetail(product) {
+      appState.selectedProduct = product;
+      
+      document.getElementById('product-detail-image').src = product.image;
+      document.getElementById('product-detail-image').alt = product.name;
+      document.getElementById('product-detail-brand').textContent = product.brand;
+      document.getElementById('product-detail-name').textContent = product.name;
+      document.getElementById('product-detail-price').textContent = formatPrice(product.currentPrice);
+      document.getElementById('product-detail-old-price').textContent = formatPrice(product.oldPrice);
+      document.getElementById('product-detail-discount').textContent = `-${product.discount}%`;
+      document.getElementById('product-detail-valid').textContent = product.validUntil;
+      document.getElementById('product-detail-category').textContent = product.category;
+
+      // Update watchlist icon
+      const watchlistBtn = document.getElementById('watchlist-toggle-detail');
+      const heartIcon = watchlistBtn.querySelector('[data-lucide="heart"]');
+      if (appState.watchlist.includes(product.id)) {
+        heartIcon.classList.add('fill-red-500', 'stroke-red-500');
+      } else {
+        heartIcon.classList.remove('fill-red-500', 'stroke-red-500');
+      }
+
+      // Render price history chart
+      renderPriceChart(product.priceHistory);
+
+      // Render stores list
+      renderStoresList(product.stores);
+
+      navigateToScreen('product-detail');
+    }
+
+    function renderPriceChart(priceHistory) {
+      const chartContainer = document.getElementById('price-chart');
+      const maxPrice = Math.max(...priceHistory.map(h => h.price));
+      
+      chartContainer.innerHTML = priceHistory.map(history => {
+        const height = (history.price / maxPrice) * 100;
+        return `
+          <div class="flex-1 flex flex-col items-center gap-2">
+            <div class="text-xs text-gray-600">${formatPrice(history.price)}</div>
+            <div class="w-full bg-blue-600 rounded-t" style="height: ${height}%"></div>
+            <div class="text-xs text-gray-500">${history.date.slice(5)}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderStoresList(stores) {
+      const storesContainer = document.getElementById('stores-list');
+      storesContainer.innerHTML = stores.map((store, index) => `
+        <div class="flex items-center justify-between p-3 border rounded-lg ${index === 0 ? 'border-blue-600 bg-blue-50' : ''}">
+          <div class="flex items-center gap-3">
+            ${index === 0 ? '<i data-lucide="star" class="w-5 h-5 text-blue-600 fill-blue-600"></i>' : ''}
+            <span class="font-medium">${store.name}</span>
+          </div>
+          <span class="font-bold text-blue-600">${formatPrice(store.price)}</span>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function toggleWatchlist(productId) {
+      if (appState.watchlist.includes(productId)) {
+        appState.watchlist = appState.watchlist.filter(id => id !== productId);
+      } else {
+        appState.watchlist.push(productId);
+      }
+      
+      // Update UI
+      renderProductsGrid();
+      renderWatchlist();
+      
+      // Update product detail if open
+      if (appState.selectedProduct && appState.selectedProduct.id === productId) {
+        const watchlistBtn = document.getElementById('watchlist-toggle-detail');
+        const heartIcon = watchlistBtn.querySelector('[data-lucide="heart"]');
+        if (appState.watchlist.includes(productId)) {
+          heartIcon.classList.add('fill-red-500', 'stroke-red-500');
+        } else {
+          heartIcon.classList.remove('fill-red-500', 'stroke-red-500');
+        }
+        lucide.createIcons();
+      }
+    }
+
+    function renderWatchlist() {
+      const grid = document.getElementById('watchlist-grid');
+      const empty = document.getElementById('watchlist-empty');
+      const watchlistProducts = mockProducts.filter(p => appState.watchlist.includes(p.id));
+
+      document.getElementById('watchlist-count').textContent = `${watchlistProducts.length} товарів`;
+
+      if (watchlistProducts.length === 0) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
+      } else {
+        empty.classList.add('hidden');
+        grid.innerHTML = watchlistProducts.map(product => 
+          renderProductCard(product, true)
+        ).join('');
+
+        // Add click handlers
+        grid.querySelectorAll('.product-card').forEach(card => {
+          card.addEventListener('click', (e) => {
+            if (!e.target.closest('.watchlist-btn')) {
+              const productId = card.dataset.productId;
+              const product = mockProducts.find(p => p.id === productId);
+              showProductDetail(product);
+            }
+          });
+        });
+
+        // Add watchlist toggle handlers
+        grid.querySelectorAll('.watchlist-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const productId = btn.dataset.productId;
+            toggleWatchlist(productId);
+          });
+        });
+      }
+
+      lucide.createIcons();
+    }
+
+    function renderNotifications() {
+      const list = document.getElementById('notifications-list');
+      const empty = document.getElementById('notifications-empty');
+      const unreadCount = appState.notifications.filter(n => !n.read).length;
+
+      document.getElementById('notifications-count').textContent = `${appState.notifications.length} сповіщень`;
+      
+      // Update badge
+      const badge = document.getElementById('notification-badge');
+      if (unreadCount > 0) {
+        badge.textContent = unreadCount;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+
+      if (appState.notifications.length === 0) {
+        list.innerHTML = '';
+        empty.classList.remove('hidden');
+      } else {
+        empty.classList.add('hidden');
+        list.innerHTML = appState.notifications.map(notif => `
+          <div class="notification-item bg-white rounded-lg p-4 flex gap-4 cursor-pointer hover:bg-gray-50 ${notif.read ? 'opacity-60' : ''}" data-notification-id="${notif.id}" data-product-id="${notif.productId}">
+            <img src="${notif.productImage}" alt="${notif.productName}" class="w-16 h-16 rounded-lg object-cover">
+            <div class="flex-1">
+              <h3 class="font-semibold mb-1 text-base">${notif.productName}</h3>
+              <p class="text-gray-600 mb-1 text-sm">${notif.message}</p>
+              <span class="text-gray-400 text-xs">${notif.time}</span>
+            </div>
+            ${!notif.read ? '<div class="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>' : ''}
+          </div>
+        `).join('');
+
+        // Add click handlers
+        list.querySelectorAll('.notification-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const notifId = item.dataset.notificationId;
+            const productId = item.dataset.productId;
+            
+            // Mark as read
+            appState.notifications = appState.notifications.map(n => 
+              n.id === notifId ? { ...n, read: true } : n
+            );
+            
+            // Navigate to product
+            const product = mockProducts.find(p => p.id === productId);
+            if (product) {
+              showProductDetail(product);
+            }
+          });
+        });
+      }
+    }
+
+    function clearAllNotifications() {
+      appState.notifications = [];
+      renderNotifications();
+    }
+
+    function handleLogin() {
+      appState.isLoggedIn = true;
+      document.getElementById('bottom-nav').classList.remove('hidden');
+      navigateToScreen('home');
+      renderProductsGrid();
+      renderWatchlist();
+      renderNotifications();
+    }
+
+    function handleLogout() {
+      appState.isLoggedIn = false;
+      appState.watchlist = [];
+      appState.currentScreen = 'login';
+      document.getElementById('bottom-nav').classList.add('hidden');
+      navigateToScreen('login');
+    }
+
+    function toggleRegisterMode() {
+      appState.isRegistering = !appState.isRegistering;
+      const subtitle = document.getElementById('login-subtitle');
+      const submitBtn = document.getElementById('login-submit-btn');
+      const toggleBtn = document.getElementById('toggle-register-btn');
+      const forgotPassword = document.getElementById('forgot-password');
+
+      if (appState.isRegistering) {
+        subtitle.textContent = 'Створити новий обліковий запис';
+        submitBtn.textContent = 'Зареєструватися';
+        toggleBtn.textContent = 'Вже маєте акаунт? Увійти';
+        forgotPassword.classList.add('hidden');
+      } else {
+        subtitle.textContent = 'Відстежуйте кращі знижки';
+        submitBtn.textContent = 'Увійти';
+        toggleBtn.textContent = 'Немає акаунту? Реєстрація';
+        forgotPassword.classList.remove('hidden');
+      }
+    }
+
+    // Event Listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      // Login form
+      document.getElementById('login-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleLogin();
+      });
+
+      // Google login
+      document.getElementById('google-login-btn').addEventListener('click', handleLogin);
+
+      // Toggle register
+      document.getElementById('toggle-register-btn').addEventListener('click', toggleRegisterMode);
+
+      // Search
+      document.getElementById('search-input').addEventListener('input', (e) => {
+        appState.searchQuery = e.target.value;
+        renderProductsGrid();
+      });
+
+      // Category filter
+      document.getElementById('category-filter').addEventListener('change', (e) => {
+        appState.categoryFilter = e.target.value;
+        renderProductsGrid();
+      });
+
+      // Sort filter
+      document.getElementById('sort-filter').addEventListener('change', (e) => {
+        appState.sortBy = e.target.value;
+        renderProductsGrid();
+      });
+
+      // Bottom navigation
+      document.querySelectorAll('.bottom-nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const screen = item.dataset.screen;
+          navigateToScreen(screen);
+          
+          if (screen === 'watchlist') {
+            renderWatchlist();
+          } else if (screen === 'notifications') {
+            renderNotifications();
+          } else if (screen === 'home') {
+            renderProductsGrid();
+          }
+        });
+      });
+
+      // Product detail back button
+      document.getElementById('back-from-product').addEventListener('click', () => {
+        navigateToScreen('home');
+      });
+
+      // Product detail watchlist toggle
+      document.getElementById('watchlist-toggle-detail').addEventListener('click', () => {
+        if (appState.selectedProduct) {
+          toggleWatchlist(appState.selectedProduct.id);
+        }
+      });
+
+      // Clear notifications
+      document.getElementById('clear-notifications-btn').addEventListener('click', clearAllNotifications);
+
+      // Logout
+      document.getElementById('logout-btn').addEventListener('click', handleLogout);
+
+      // Initialize icons
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
