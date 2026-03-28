@@ -21,17 +21,20 @@ const User = sequelize.define(
         isEmail: true,
       },
     },
-    password: {
+    password_hash: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "user",
     },
   },
   {
     tableName: "users",
     timestamps: true,
     underscored: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
   },
 );
 

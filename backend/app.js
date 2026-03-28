@@ -3,12 +3,15 @@ const express = require("express");
 const path = require("path");
 const sequelize = require("./config/database");
 const User = require("./models/user");
+const checkAuth = require("./middleware/auth");
 
 const app = express();
 const port = process.env.PORT || 3111;
 
 app.use(express.json());
 app.use(express.static("/frontend"));
+const authRoutes = require("./routes/auth");
+app.use("/auth", authRoutes);
 
 async function initDatabase() {
   try {
@@ -22,7 +25,7 @@ async function initDatabase() {
   }
 }
 
-app.get("/users", async (req, res) => {
+app.get("/users", checkAuth, async (req, res) => {
   try {
     const users = await User.findAll();
     res.json({ success: true, data: users });
