@@ -1,7 +1,7 @@
 const express = require("express");
 const knex = require("../db");
 const checkAuth = require("../middleware/auth");
-const { runScrape } = require("../services/scraper-service");
+const { runScraper } = require("../services/scraper-service");
 const atbScraper = require("../scrapers/atb");
 
 const router = express.Router();
