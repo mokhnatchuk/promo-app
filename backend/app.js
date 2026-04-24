@@ -3,7 +3,7 @@ const express = require("express");
 const checkAuth = require("./middleware/auth");
 const authRoutes = require("./routes/auth");
 const promosRoutes = require("./routes/promos");
-const knex = require("knex")(require("./knexfile").development);
+const knex = require("./db");
 
 const app = express();
 const port = process.env.PORT || 3111;

@@ -1,5 +1,5 @@
 const express = require("express");
-const knex = require("knex")(require("../knexfile").development);
+const knex = require("../db");
 const checkAuth = require("../middleware/auth");
 const { runScrape } = require("../services/scraper-service");
 const atbScraper = require("../scrapers/atb");
